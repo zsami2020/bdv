@@ -15,73 +15,38 @@
     }
   ],
   "routes": [
-    // CSS
     {
-      "src": "/assets/(.+\\.css)",
+      "src": "/assets/(.*\\.css)",
       "dest": "/assets/$1",
       "headers": {
-        "Content-Type": "text/css",
-        "Cache-Control": "public, max-age=31536000"
-      }
-    },
-    // JavaScript
-    {
-      "src": "/assets/(.+\\.js)",
-      "dest": "/assets/$1",
-      "headers": {
-        "Content-Type": "application/javascript",
-        "Cache-Control": "public, max-age=31536000"
-      }
-    },
-    // Imágenes
-    {
-      "src": "/assets/(.+\\.png)",
-      "dest": "/assets/$1",
-      "headers": {
-        "Content-Type": "image/png",
-        "Cache-Control": "public, max-age=31536000"
+        "Content-Type": "text/css"
       }
     },
     {
-      "src": "/assets/(.+\\.jpg|jpeg)",
+      "src": "/assets/(.*\\.js)",
       "dest": "/assets/$1",
       "headers": {
-        "Content-Type": "image/jpeg",
-        "Cache-Control": "public, max-age=31536000"
+        "Content-Type": "application/javascript"
       }
     },
     {
-      "src": "/assets/(.+\\.webp)",
+      "src": "/assets/(.*\\.(png|jpg|jpeg|webp|gif|ico))",
       "dest": "/assets/$1",
       "headers": {
-        "Content-Type": "image/webp",
-        "Cache-Control": "public, max-age=31536000"
+        "Content-Type": "image/$2"
       }
     },
-    // Favicon
     {
-      "src": "/assets/(.+\\.ico)",
+      "src": "/assets/(.*\\.woff2)",
       "dest": "/assets/$1",
       "headers": {
-        "Content-Type": "image/x-icon",
-        "Cache-Control": "public, max-age=31536000"
+        "Content-Type": "font/woff2"
       }
     },
-    // Fuentes
-    {
-      "src": "/assets/(.+\\.woff2)",
-      "dest": "/assets/$1",
-      "headers": {
-        "Content-Type": "font/woff2",
-        "Cache-Control": "public, max-age=31536000"
-      }
-    },
-    // API
     {
       "src": "/api/(.*)",
       "dest": "/api/api.php"
     },
-    // Catch-all
     {
       "src": "/(.*)",
       "dest": "/index.php"
