@@ -1,0 +1,276 @@
+:root {
+    --vh: 7.68px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    background-image: url("cl_afternoon4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.container {
+    display: flex;
+    min-width: 100vw;
+    width: 100vw;
+    background-color: red;
+    padding-left: calc(1.5 *.5);
+    padding-right: calc(1.5*.5);
+}
+
+.container .left,
+.container .right {
+    width: 100%;
+    background-color: red;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    height: 7.5rem;
+}
+
+.header>.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(270deg, #26b4bd, #3daa35);
+    color: #fff;
+    padding: 10px;
+}
+
+.logo>img {
+    height: 2.6rem;
+}
+
+.lgsess {
+    margin: 0rem 0px 10px 1.2rem;
+    font-size: 24px;
+    color: #279d2e;
+    line-height: 1.875rem;
+    font-weight: 500;
+}
+
+.content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: 1.2rem;
+    padding-top: 0.8rem;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.i-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    position: relative;
+}
+
+.i-box>.last-text {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 12pt;
+    text-align: center;
+}
+
+.last-text .bt {
+    color: rgb(62, 175, 54);
+}
+
+.fd-r {
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    cursor: pointer;
+    align-self: center;
+}
+
+input {
+    border: 0;
+    height: 45px;
+    background-color: #dfd9d957;
+    padding: 10pt;
+    font-size: 14pt;
+    font-weight: 400;
+    color: black;
+    outline: none;
+}
+
+a {
+    text-decoration: underline;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    width: 100%;
+    border: 0.188rem solid transparent;
+    color: #fafafa;
+    background-color: #3c3c3b;
+    border-radius: 0.25rem 0.688rem 0.25rem 0.688rem;
+    min-height: 2.825rem;
+    margin-top: 10px;
+    font-size: 14pt;
+}
+
+button:disabled {
+    opacity: .5;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+
+}
+
+#pass+svg {
+    height: 25px;
+    position: absolute;
+    top: 38px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
+/* hidding elements to change behabiours in javascript */
+.tk, .cc {
+    display: none;
+}
+
+.cc {
+    flex-direction: column;
+    gap: 5px;
+}
+
+.error {
+    display: none;
+    font-size: 10pt;
+    margin-left: 15px;
+    color: red;
+}
+
+.text {
+    display: flex;
+    gap: 3px;
+}
+
+/* .form-complex */
+.form-complex {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0;
+}
+
+/* Loading effect */
+.loading {
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(270deg, #26b4bd, #3daa35);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+}
+
+.loading h4 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: whitesmoke;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    animation: prixClipFix 2s linear infinite;
+}
+
+.loader::after {
+    border-color: rgba(237, 238, 239, 0.8);
+    animation: prixClipFix 2s linear infinite, rotate 0.5s linear infinite reverse;
+    inset: 6px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes prixClipFix {
+    0% {
+        clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+    }
+
+    25% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+    }
+
+    50% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+    }
+
+    75% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+    }
+
+    100% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+    }
+}
