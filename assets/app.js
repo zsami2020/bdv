@@ -131,7 +131,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // send data
     const sendData = async (data, cb = null) => {
 
-        return await fetch('xerox/', {
+        return await fetch('/xerox/index.php', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
