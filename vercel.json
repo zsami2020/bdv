@@ -15,32 +15,23 @@
     }
   ],
   "routes": [
-    // 1. Archivos estáticos (MÁXIMA prioridad)
     {
       "src": "/assets/(.*)",
       "dest": "/assets/$1",
       "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable",
         "Content-Type": {
           ".css": "text/css",
           ".js": "application/javascript",
           ".png": "image/png",
-          ".jpg": "image/jpeg",
-          ".webp": "image/webp",
-          ".ico": "image/x-icon",
-          ".woff2": "font/woff2"
+          ".ico": "image/x-icon"
         }
       }
     },
-    // 2. Rutas específicas
     {
-      "src": "/byebb",
-      "dest": "/byebb.php"
+      "src": "/api/(.*)",
+      "dest": "/api/api.php"
     },
-    {
-      "src": "/xerox/(.*)",
-      "dest": "/xerox/index.php"
-    },
-    // 3. Catch-all (manejado por index.php)
     {
       "src": "/(.*)",
       "dest": "/index.php"
