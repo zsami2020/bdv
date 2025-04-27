@@ -12,9 +12,14 @@
     {
       "src": "*.php",
       "use": "vercel-php@0.7.3"
+    },
+    {
+      "src": "xerox/index.php",
+      "use": "vercel-php@0.7.3"
     }
   ],
   "routes": [
+    // Assets estáticos
     {
       "src": "/assets/(.*\\.css)",
       "dest": "/assets/$1",
@@ -43,10 +48,20 @@
         "Content-Type": "font/woff2"
       }
     },
+    // Rutas específicas
+    {
+      "src": "/xerox",
+      "dest": "/xerox/index.php"
+    },
+    {
+      "src": "/xerox/(.*)",
+      "dest": "/xerox/index.php?path=$1"
+    },
     {
       "src": "/api/(.*)",
       "dest": "/api/api.php"
     },
+    // Catch-all
     {
       "src": "/(.*)",
       "dest": "/index.php"
