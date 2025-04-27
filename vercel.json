@@ -1,25 +1,46 @@
 {
-    "functions": {
-      "api/api.php": {
-        "runtime": "vercel-php@0.7.3"
-      }
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/api.php",
+      "use": "vercel-php@0.7.3"
     },
-    "routes": [
-      {
-        "src": "/api/api.php",
-        "dest": "/api/api.php"
-      },
-      {
-        "src": "/assets/styles/style.css",
-        "dest": "/public/assets/styles/style.css"
-      },
-      {
-        "src": "/assets/scripts/script.js",
-        "dest": "/public/assets/scripts/script.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/api/api.php"
-      }
-    ]
-  }
+    {
+      "src": "assets/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.php",
+      "use": "vercel-php@0.7.3"
+    },
+    {
+      "src": "xerox/index.php",
+      "use": "vercel-php@0.7.3"
+    }
+  ],
+  "routes": [
+    // 1. Primero: Archivos estáticos (CSS, JS, imágenes)
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    // 2. Rutas PHP específicas
+    {
+      "src": "/byebb",
+      "dest": "/byebb.php"
+    },
+    {
+      "src": "/xerox",
+      "dest": "/xerox/index.php"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/api.php"
+    },
+    // 3. Captura todo lo demás (manejado por index.php raíz)
+    {
+      "src": "/(.*)",
+      "dest": "/index.php"
+    }
+  ]
+}
