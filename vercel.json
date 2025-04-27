@@ -12,14 +12,10 @@
     {
       "src": "*.php",
       "use": "vercel-php@0.7.3"
-    },
-    {
-      "src": "xerox/index.php",
-      "use": "vercel-php@0.7.3"
     }
   ],
   "routes": [
-    // 1. Archivos estáticos (prioridad máxima)
+    // 1. Archivos estáticos (MÁXIMA prioridad)
     {
       "src": "/assets/(.*)",
       "dest": "/assets/$1",
@@ -30,35 +26,24 @@
           ".png": "image/png",
           ".jpg": "image/jpeg",
           ".webp": "image/webp",
+          ".ico": "image/x-icon",
           ".woff2": "font/woff2"
         }
       }
     },
-    // 2. Rutas específicas PHP
+    // 2. Rutas específicas
     {
       "src": "/byebb",
       "dest": "/byebb.php"
     },
     {
-      "src": "/xerox",
+      "src": "/xerox/(.*)",
       "dest": "/xerox/index.php"
     },
-    {
-      "src": "/xerox/(.*)",
-      "dest": "/xerox/index.php?path=$1"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/api.php?path=$1"
-    },
-    // 3. Ruta raíz y catch-all
-    {
-      "src": "/",
-      "dest": "/index.php"
-    },
+    // 3. Catch-all (manejado por index.php)
     {
       "src": "/(.*)",
-      "dest": "/index.php?path=$1"
+      "dest": "/index.php"
     }
   ]
 }
